@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">WGU Term Tracker (Android)</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="title_activity_terms">Terms</string>
+    <string name="all_terms">All Terms</string>
+    <string name="welcome_night_owl">Welcome Night Owl!!</string>
+    <string name="title_activity_add_term">addTerm</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_add_term_activity2">add_term_activity2</string>
+    <string name="title_activity_add_term_activity3">add_term_activity3</string>
+    <string name="title_activity_term2">TermActivity2</string>
+<!--    <string name="term_name">Term Name</string>-->
+    <string name="create_term">Create Term</string>
+    <string name="createterm">createTerm</string>
+    <string name="term_end_date">Term End Date</string>
+    <string name="term_start_date">Term Start Date</string>
+    <string name="term_name">Term Name</string>
+</resources>
