@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver
+            android:name=".AddTermReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
         <activity
             android:name=".TermActivity2"
             android:label="@string/title_activity_term2"
