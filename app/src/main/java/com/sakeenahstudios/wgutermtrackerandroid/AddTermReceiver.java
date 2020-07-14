@@ -14,13 +14,10 @@ import androidx.core.app.NotificationCompat;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
-
-
 public class AddTermReceiver extends BroadcastReceiver {
 
     static int notificationID;
     String channel_id="test";
-
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -48,17 +45,4 @@ public class AddTermReceiver extends BroadcastReceiver {
             notificationManager.createNotificationChannel(channel);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
