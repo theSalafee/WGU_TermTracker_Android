@@ -1,18 +1,79 @@
 <resources>
-    <string name="app_name">WGU Term Tracker (Android)</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
+    <string name="app_name">WGU Term Tracker c196</string>
+    <string name="menu_terms">Terms</string>
+    <string name="menu_courses">Courses</string>
+    <string name="menu_assessments">Assessments</string>
+    <string name="menu_settings">Settings</string>
+    <string name="nav_header_title">Naasir Bush</string>
+    <string name="nav_header_subtitle">Software Development</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_term_list">Term List</string>
+    <string name="channel_name">Term Tracker</string>
+    <string name="channel_description">Tracker Alert</string>
+    <string name="channel_id">WGUc196</string>
+    <string name="terms_button">Terms</string>
+    <string name="courses_button">Courses</string>
+    <string name="assessments_button">Assessments</string>
+    <string name="term_dates">Term Dates</string>
+    <string name="term_title">Term Title</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_delete_all_terms">Delete All Terms</string>
+    <string name="save_button">Save</string>
+    <string name="start_date">Start Date</string>
+    <string name="start_button">Start</string>
+    <string name="end_date">End Date</string>
+    <string name="end_button">End</string>
+    <string name="term_edit">Term Edit</string>
+    <string name="course_dates">Course Dates</string>
+    <string name="course_title">Course Title</string>
+    <string name="course_list">Courses List</string>
+    <string name="add_course">Add Course</string>
+    <string name="save">Save</string>
+    <string name="mentor_list">Mentors List</string>
+    <string name="add_mentor">Add Mentor</string>
+    <string name="course_status">Status</string>
+    <string name="mentor_name">Mentor Name</string>
+    <string name="course_term_id">Term ID</string>
+    <string name="menu_delete_all_courses">Delete All Courses</string>
+    <string name="title_activity_course_list">Course List</string>
+    <string name="note_title">Note Title</string>
+    <string name="phone_label">Phone</string>
+    <string name="email_label">Email</string>
+    <string name="email_address">Email Address</string>
+    <string name="mentor_email_label">Mentor Email</string>
+    <string name="mentor_phone_label">Mentor Phone</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="assessment_list">Assessment List</string>
+    <string name="add_assessment">Add Assessment</string>
+    <string name="due_button">Due</string>
+    <string name="note_list">Notes List</string>
+    <string name="assessment_type">Type</string>
+    <string name="assessment_name">Name</string>
+    <string name="menu_delete_all_assessments">Delete All Assessments</string>
+    <string name="menu_delete_all_mentors">Delete All Mentors</string>
+    <string name="menu_delete_all_notes">Delete All Notes</string>
+    <string name="phone_hint">(509) 123–1234</string>
+    <string name="note_text">Note Text</string>
+    <string name="alert">Alert</string>
+    <string name="title_activity_term_editor">Term Editor</string>
+    <string name="title_activity_terms" />
+    <string name="welcome_night_owl" />
+    <string name="action_settings" />
+    <string name="first_fragment_label" />
+    <string name="second_fragment_label" />
 
-    <string name="title_activity_terms">Terms</string>
-    <string name="all_terms">All Terms</string>
-    <string name="welcome_night_owl">Welcome Night Owl!!</string>
-    <!-- Strings used for fragments for navigation -->
 
-    <string name="title_activity_term2">TermActivity2</string>
-<!--    <string name="term_name">Term Name</string>-->
-    <string name="create_term">Create Term</string>
-    <string name="createterm">createTerm</string>
-    <string name="term_end_date">Term End Date</string>
-    <string name="term_start_date">Term Start Date</string>
-    <string name="term_name">Term Name</string>
+    <string-array name="status">
+        <item>Plan To Take</item>
+        <item>In Progress</item>
+        <item>Completed</item>
+        <item>Dropped</item>
+    </string-array>
+
+    <string-array name="type">
+        <item>Objective</item>
+        <item>Performance</item>
+    </string-array>
+
 </resources>
