@@ -2,44 +2,83 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9FA8DA"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
-    <Button
-        android:id="@+id/termsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="300sp"
-        android:text="@string/title_activity_terms"
-        android:textSize="30sp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="309dp"
+        android:layout_height="318dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintTop_toBottomOf="@+id/assessments_button"
+        app:layout_constraintVertical_bias="0.423"
+        app:srcCompat="@drawable/ic_western_governors_university_wgu_vector_logo"
+        tools:ignore="VectorDrawableCompat" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
-        android:text="@string/welcome_night_owl"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
+    <Button
+        android:id="@+id/courses_button"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#009688"
+        android:onClick="showCourseList"
+        android:text="@string/courses_button"
+        android:textColor="#F8F5F5"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="375dp"
-        android:layout_height="274dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_western_governors_university_wgu_vector_logo" />
+        app:layout_constraintVertical_bias="0.322">
+
+    </Button>
+
+    <Button
+        android:id="@+id/terms_button"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="#009688"
+        android:onClick="showTermList"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/terms_button"
+        android:textColor="#F6F1F1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/courses_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
+        android:id="@+id/assessments_button"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_margin="30dp"
+        android:layout_marginTop="24dp"
+        android:background="#009688"
+        android:onClick="showAssessmentList"
+        android:text="@string/assessments_button"
+        android:textColor="#F6F3F3"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/courses_button">
+
+    </Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
