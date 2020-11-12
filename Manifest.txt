@@ -1,0 +1,1 @@
+Manifest:1. A zipped Android project named: WGUTermTrackerAndroidA. A file named: WGU_Signed_APK with two filesa. SignedAPK.pdfb. WGU_Build_APKB. App_Storyboarda. WGUC196_Final.pdfJayson Bush	WGU C196 Android Application	11/11/20
