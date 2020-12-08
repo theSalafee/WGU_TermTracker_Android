@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 @androidx.room.Database(entities = {NoteEntity.class, TermEntity.class, CourseEntity.class, AssessmentEntity.class,
-        MentorEntity.class}, version = 2)
+        MentorEntity.class}, version = 3)
 public abstract class Database extends RoomDatabase {
 
     private static final String DATABASE_NAME = "WGUC196.db";

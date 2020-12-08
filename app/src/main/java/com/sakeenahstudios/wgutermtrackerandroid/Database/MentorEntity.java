@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "mentors",
         foreignKeys = @ForeignKey(entity = CourseEntity.class,
                 parentColumns = "course_id",
-                childColumns = "course_id", onDelete = ForeignKey.CASCADE))
+                childColumns = "course_id"))
 public class MentorEntity {
 
     @PrimaryKey(autoGenerate = true)
