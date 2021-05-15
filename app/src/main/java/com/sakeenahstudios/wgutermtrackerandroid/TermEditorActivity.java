@@ -45,15 +45,16 @@ public class TermEditorActivity extends AppCompatActivity implements DatePickerD
     public static final int EDIT_COURSE_REQUEST = 2;
 
     public static final String EXTRA_TERMID =
-            "com.example.jasontrowbridgec196v2.EXTRA_TERMID";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_TERMID";
     public static final String EXTRA_TITLE =
-            "com.example.jasontrowbridgec196v2.EXTRA_TITLE";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_TITLE";
     public static final String EXTRA_START_DATE =
-            "com.example.jasontrowbridgec196v2.START_DATE";
+            "com.sakeenahstudios.wgutermtrackerandroid.START_DATE";
     public static final String EXTRA_END_DATE =
-            "com.example.jasontrowbridgec196v2.END_DATE";
+            "com.sakeenahstudios.wgutermtrackerandroid.END_DATE";
     public static final String EXTRA_STATUS =
-            "com.example.jasontrowbridgec196v2.STATUS";
+            "com.sakeenahstudios.wgutermtrackerandroid.STATUS";
+
 
 
     private TermEditorViewModel termEditorViewModel;

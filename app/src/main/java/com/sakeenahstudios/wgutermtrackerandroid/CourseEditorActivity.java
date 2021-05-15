@@ -1,7 +1,10 @@
 package com.sakeenahstudios.wgutermtrackerandroid;
 
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,7 +39,6 @@ import com.sakeenahstudios.wgutermtrackerandroid.Adapter.AssessmentAdapter;
 import com.sakeenahstudios.wgutermtrackerandroid.Adapter.MentorAdapter;
 import com.sakeenahstudios.wgutermtrackerandroid.Database.AssessmentEntity;
 import com.sakeenahstudios.wgutermtrackerandroid.Database.CourseEntity;
-import com.sakeenahstudios.wgutermtrackerandroid.Database.DateConverter;
 import com.sakeenahstudios.wgutermtrackerandroid.Database.MentorEntity;
 import com.sakeenahstudios.wgutermtrackerandroid.Database.TermEntity;
 import com.sakeenahstudios.wgutermtrackerandroid.ViewModel.AssessmentViewModel;
@@ -47,6 +49,7 @@ import com.sakeenahstudios.wgutermtrackerandroid.ViewModel.TermViewModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -68,6 +71,8 @@ public class CourseEditorActivity extends AppCompatActivity implements DatePicke
             "com.example.jasontrowbridgec196v2.EXTRA_STATUS";
     public static final String EXTRA_TERMID =
             "com.example.jasontrowbridgec196v2.EXTRA_TERMID";
+
+    public static int numAlert;
 
 
     private CourseEditorViewModel courseEditorViewModel;
@@ -183,13 +188,32 @@ public class CourseEditorActivity extends AppCompatActivity implements DatePicke
     }
 
     private void _scheduleAlert(int id, String time, String title, String text) {
-        long now = DateConverter.nowDate();
-        long alertTime = DateConverter.toTimestamp(time);
-        if (now <= DateConverter.toTimestamp(time)) {
-            NotificationReceiver.scheduleCourseAlarm(getApplicationContext(), id, alertTime,
-                    text, title + ", occurring at: " + time);
+//        long now = DateConverter.nowDate();
+//        long alertTime = DateConverter.toTimestamp(time);
+//        if (now <= DateConverter.toTimestamp(time)) {
+//            NotificationReceiver.scheduleCourseAlarm(getApplicationContext(), id, alertTime,
+//                    text, title + ", occurring at: " + time);
+//        }
+//    }
+
+        String myDate = courseStartDateEditText.getText().toString();
+        SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-M-dd", Locale.US);
+        Date startDate = null;
+        try {
+            startDate = myFormat.parse(myDate);
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
+        Intent intent=new Intent(CourseEditorActivity.this,NotificationReceiver.class);
+        intent.putExtra("key","This is a short message");
+        PendingIntent sender= PendingIntent.getBroadcast(CourseEditorActivity.this,++numAlert,intent,0);
+        AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
+//        date=myCalendar.getTimeInMillis();
+        alarmManager.set(AlarmManager.RTC_WAKEUP, startDate.getTime(), sender);
     }
+
+
 
     public void scheduleAlert(MenuItem menuItem) {
         String dateText = courseStartDateEditText.getText().toString();

@@ -65,7 +65,7 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
 
     public void setAssessments(List<AssessmentEntity> assessments) {
         this.assessments = assessments;
-        notifyDataSetChanged();//*** NOT THE BEST OPTION ***
+        notifyDataSetChanged();
     }
     public interface OnItemClickListener {
         void onItemClick(AssessmentEntity assessment);

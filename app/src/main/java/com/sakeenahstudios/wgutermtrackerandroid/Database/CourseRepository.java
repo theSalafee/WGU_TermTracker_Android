@@ -19,6 +19,10 @@ public class CourseRepository {
         new InsertCourseAsyncTask(courseDAO).execute(course);
     }
 
+    public void updateCourse(CourseEntity course){
+        new UpdateCourseAsyncTask(courseDAO).execute(course);
+    }
+
     public void deleteCourse(CourseEntity course){
         new DeleteCourseAsyncTask(courseDAO).execute(course);
     }
@@ -49,6 +53,20 @@ public class CourseRepository {
         @Override
         protected Void doInBackground(CourseEntity... courseEntities) {
             courseDAO.insertCourse(courseEntities[0]);
+            return null;
+        }
+    }
+
+    private static class UpdateCourseAsyncTask extends AsyncTask<CourseEntity, Void, Void> {
+        private CourseDAO courseDAO;
+
+        private UpdateCourseAsyncTask (CourseDAO courseDAO) {
+            this.courseDAO = courseDAO;
+        }
+
+        @Override
+        protected Void doInBackground (CourseEntity... courseEntities) {
+            courseDAO.updateCourse(courseEntities[0]);
             return null;
         }
     }

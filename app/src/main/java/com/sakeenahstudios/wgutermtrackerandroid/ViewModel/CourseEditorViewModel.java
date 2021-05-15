@@ -59,6 +59,11 @@ public class CourseEditorViewModel extends AndroidViewModel {
         courseRepository.insertCourse(course);
     }
 
+    //TODO: Update data
+    // update existing course
+    // test if new course
+    // else update
+
     public void insertCourse(CourseEntity courseEntity){
         courseRepository.insertCourse(courseEntity);
     }
