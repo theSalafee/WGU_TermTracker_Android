@@ -33,13 +33,13 @@ import java.util.List;
 
 public class NoteEditorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static final String EXTRA_NOTEID =
-            "com.example.jasontrowbridgec196v2.EXTRA_NOTEID";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_NOTEID";
     public static final String EXTRA_TITLE =
-            "com.example.jasontrowbridgec196v2.EXTRA_TITLE";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_TITLE";
     public static final String EXTRA_TEXT =
-            "com.example.jasontrowbridgec196v2.EXTRA_TEXT";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_TEXT";
     public static final String EXTRA_ASSESSMENTID =
-            "com.example.jasontrowbridgec196v2.EXTRA_ASSESSMENTID";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_ASSESSMENTID";
 
     private NoteEditorViewModel noteEditorViewModel;
     private AssessmentViewModel assessmentViewModel;

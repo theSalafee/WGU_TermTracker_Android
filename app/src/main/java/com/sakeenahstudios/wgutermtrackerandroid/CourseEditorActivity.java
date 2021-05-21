@@ -3,10 +3,14 @@ package com.sakeenahstudios.wgutermtrackerandroid;
 
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -28,6 +32,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -58,19 +63,21 @@ public class CourseEditorActivity extends AppCompatActivity implements DatePicke
     public static final int EDIT_MENTOR_REQUEST = 2;
     public static final int ADD_ASSESSMENT_REQUEST = 1;
     public static final int EDIT_ASSESSMENT_REQUEST = 2;
+    private static final String CHANNEL_ID = "WGUC196";
+
 
     public static final String EXTRA_COURSEID =
-            "com.example.jasontrowbridgec196v2.EXTRA_COURSEID";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_COURSEID";
     public static final String EXTRA_TITLE =
-            "com.example.jasontrowbridgec196v2.EXTRA_TITLE";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_TITLE";
     public static final String EXTRA_START_DATE =
-            "com.example.jasontrowbridgec196v2.EXTRA_START_DATE";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_START_DATE";
     public static final String EXTRA_END_DATE =
-            "com.example.jasontrowbridgec196v2.EXTRA_END_DATE";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_END_DATE";
     public static final String EXTRA_STATUS =
-            "com.example.jasontrowbridgec196v2.EXTRA_STATUS";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_STATUS";
     public static final String EXTRA_TERMID =
-            "com.example.jasontrowbridgec196v2.EXTRA_TERMID";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_TERMID";
 
     public static int numAlert;
 
@@ -187,14 +194,56 @@ public class CourseEditorActivity extends AppCompatActivity implements DatePicke
 
     }
 
+
+    //// Setting up Notification
+    public void onReceive (Context context, Intent intent) {
+        int notificationId = 0;
+        Toast.makeText(context, "Updated with an ID of : "+Integer.toString(notificationId), Toast.LENGTH_LONG).show();
+        createNotificationChannel(context, CHANNEL_ID );
+        String msg = intent.getStringExtra("key");
+        //Inputs
+        String destination = intent.getStringExtra("destination");
+        if (destination == null || destination.isEmpty()) {
+            destination = "";
+        }
+        int id = intent.getIntExtra("id", 0);
+
+        // Notification Builder
+        Notification builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_lightbulb_outline_black_24dp)
+                .setContentTitle(msg)
+                .setContentText(msg).build();
+
+        NotificationManager mm = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
+        mm.notify(notificationId++, builder);
+    }
+
+    private void createNotificationChannel(Context context, String CHANNEL_ID) {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = context.getResources().getString(R.string.channel_name);
+            String description = context.getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+// Pending intent
+    // tell it when it goes off
+    // takes you to broadcast receiver
+
+
+
+
+
     private void _scheduleAlert(int id, String time, String title, String text) {
-//        long now = DateConverter.nowDate();
-//        long alertTime = DateConverter.toTimestamp(time);
-//        if (now <= DateConverter.toTimestamp(time)) {
-//            NotificationReceiver.scheduleCourseAlarm(getApplicationContext(), id, alertTime,
-//                    text, title + ", occurring at: " + time);
-//        }
-//    }
 
         String myDate = courseStartDateEditText.getText().toString();
         SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-M-dd", Locale.US);

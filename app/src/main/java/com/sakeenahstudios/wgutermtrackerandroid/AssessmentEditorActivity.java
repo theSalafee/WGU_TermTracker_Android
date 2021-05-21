@@ -58,6 +58,10 @@ public class AssessmentEditorActivity extends AppCompatActivity implements DateP
             "com.example.sakeenahstudios.wgutermtrackerandroid.EXTRA_NAME";
     public static final String EXTRA_DUE_DATE =
             "com.example.sakeenahstudios.wgutermtrackerandroid.EXTRA_DUE_DATE";
+//    public static final String EXTRA_START_DATE =
+//            "com.sakeenahstudios.wgutermtrackerandroid.START_DATE";
+//    public static final String EXTRA_END_DATE =
+//            "com.sakeenahstudios.wgutermtrackerandroid.END_DATE";
     public static final String EXTRA_TYPE =
             "com.example.sakeenahstudios.wgutermtrackerandroid.EXTRA_TYPE";
     public static final String EXTRA_COURSEID =
@@ -87,6 +91,11 @@ public class AssessmentEditorActivity extends AppCompatActivity implements DateP
     private TextView datePickerView;
     private Spinner assessmentTypeSpinner;
     private Spinner assessmentCourseIDSpinner;
+
+//    private EditText assessmentStartDateEditText;
+//    private EditText assessmentEndDateEditText;
+//    Button startDatePickerButton;
+//    Button endDatePickerButton;
 
     private int spinnerCount = 0;
     private int currentCourseID;
@@ -125,6 +134,12 @@ public class AssessmentEditorActivity extends AppCompatActivity implements DateP
 
         //Populate Note RecyclerView
         initNoteRecyclerView();
+
+//        assessmentStartDateEditText = findViewById(R.id.assessment_start_date_edit_text);
+//        assessmentEndDateEditText = findViewById(R.id.assessment_end_date_edit_text);
+//
+//        assessmentStartDateEditText.addTextChangedListener(assessmentTextWatcher);
+//        assessmentEndDateEditText.addTextChangedListener(assessmentTextWatcher);
 
 
         //Type Spinner setup
@@ -341,6 +356,26 @@ public class AssessmentEditorActivity extends AppCompatActivity implements DateP
 
     private void setupDatePickers() {
         assessmentDatePickerButton = findViewById(R.id.due_date_picker);
+//        startDatePickerButton = findViewById(R.id.start_date_picker);
+//        endDatePickerButton = findViewById(R.id.end_date_picker);
+
+//        startDatePickerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                datePickerView = findViewById(R.id.assessment_start_date_edit_text);
+//                DialogFragment datePicker = new DatePickerFragment();
+//                datePicker.show(getSupportFragmentManager(), "date picker");
+//            }
+//        });
+
+//        endDatePickerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                datePickerView = findViewById(R.id.assessment_end_date_edit_text);
+//                DialogFragment datePicker = new DatePickerFragment();
+//                datePicker.show(getSupportFragmentManager(), "date picker");
+//            }
+//        });
 
         assessmentDatePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override

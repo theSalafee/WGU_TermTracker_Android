@@ -34,15 +34,15 @@ import java.util.List;
 public class MentorEditorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static final String EXTRA_MENTORID =
-            "com.example.jasontrowbridgec196v2.EXTRA_MENTORID";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_MENTORID";
     public static final String EXTRA_NAME =
-            "com.example.jasontrowbridgec196v2.EXTRA_NAME";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_NAME";
     public static final String EXTRA_PHONE =
-            "com.example.jasontrowbridgec196v2.EXTRA_PHONE";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_PHONE";
     public static final String EXTRA_EMAIL =
-            "com.example.jasontrowbridgec196v2.EXTRA_EMAIL";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_EMAIL";
     public static final String EXTRA_COURSEID =
-            "com.example.jasontrowbridgec196v2.EXTRA_COURSEID";
+            "com.sakeenahstudios.wgutermtrackerandroid.EXTRA_COURSEID";
 
     private MentorEditorViewModel mentorEditorViewModel;
     private CourseViewModel courseViewModel;
