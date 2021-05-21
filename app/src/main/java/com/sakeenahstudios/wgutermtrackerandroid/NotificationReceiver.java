@@ -28,8 +28,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive (Context context, Intent intent) {
-//        Toast.makeText(context, intent.getStringExtra("Channel ID = " + CHANNEL_ID), Toast.LENGTH_LONG).show();
-        Toast.makeText(context, "I got this far", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "WGU Schedule Notification ID of : "+Integer.toString(notificationId), Toast.LENGTH_LONG).show();
         createNotificationChannel(context, CHANNEL_ID );
         String msg = intent.getStringExtra("key");
         //Inputs
@@ -38,9 +37,6 @@ public class NotificationReceiver extends BroadcastReceiver {
             destination = "";
         }
         int id = intent.getIntExtra("id", 0);
-//        String alarmTitle = intent.getStringExtra("title");
-//        String alarmText = intent.getStringExtra("text");
-//        int nextAlarmId = intent.getIntExtra("nextAlarmId", getAndIncrementNextAlarmId(context));
 
         // Notification Builder
         Notification builder = new NotificationCompat.Builder(context, CHANNEL_ID)
@@ -50,44 +46,6 @@ public class NotificationReceiver extends BroadcastReceiver {
 
         NotificationManager mm = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
         mm.notify(notificationId++, builder);
-
-//        //Target intent to launch
-//        Intent resultIntent;
-//        Uri uri;
-//        SharedPreferences sharedPreferences;
-//        switch (destination) {
-//
-//            case "course":
-//                resultIntent = new Intent(context, CourseEditorActivity.class);
-//                //resultIntent.putExtra(EXTRA_COURSEID, id);
-//                resultIntent.putExtra(EXTRA_COURSEID, id);
-//                break;
-//
-//            case "term":
-//                resultIntent = new Intent(context, TermEditorActivity.class);
-//                resultIntent.putExtra(EXTRA_TERMID, id);
-//                break;
-//
-//            case "assessment":
-//                resultIntent = new Intent(context, AssessmentEditorActivity.class);
-//                resultIntent.putExtra(EXTRA_ASSESSMENTID, id);
-//                break;
-//
-//            default:
-//                resultIntent = new Intent(context, MainActivity.class);
-//                break;
-//        }
-
-        //Task navigation for target intent.
-//        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-//        stackBuilder.addParentStack(MainActivity.class);
-//        stackBuilder.addNextIntent(resultIntent);
-//        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-//        builder.setContentIntent(resultPendingIntent).setAutoCancel(true);
-//
-//        //Do the notification
-//        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-//        notificationManager.notify(nextAlarmId, builder.build());
     }
 
 
